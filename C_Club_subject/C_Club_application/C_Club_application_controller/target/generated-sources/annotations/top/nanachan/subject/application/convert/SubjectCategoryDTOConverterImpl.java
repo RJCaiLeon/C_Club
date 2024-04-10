@@ -6,7 +6,7 @@ import top.nanachan.subject.domain.entity.SubjectCategoryBO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-08T11:27:38+0800",
+    date = "2024-04-10T18:17:55+0800",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_301 (Oracle Corporation)"
 )
 public class SubjectCategoryDTOConverterImpl implements SubjectCategoryDTOConverter {
