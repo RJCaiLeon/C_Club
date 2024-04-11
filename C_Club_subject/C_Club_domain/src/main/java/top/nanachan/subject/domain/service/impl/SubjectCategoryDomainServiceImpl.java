@@ -10,6 +10,8 @@ import top.nanachan.subject.infra.basic.entity.SubjectCategory;
 import top.nanachan.subject.infra.basic.service.SubjectCategoryService;
 
 import javax.annotation.Resource;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author leon_ccc
@@ -30,5 +32,16 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
         SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE.convertBOToCategory(subjectCategoryBO);
 
         subjectCategoryService.insert(subjectCategory);
+    }
+
+    public List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO) {
+        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE.convertBOToCategory(subjectCategoryBO);
+
+        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryCategory(subjectCategory);
+        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE.convertBOToCategory(subjectCategoryList);
+        if (log.isInfoEnabled()) { // 日志优化，避免多余的json转换
+            log.info("SubjectCategoryController.queryPrimaryCategory.boList:{}", JSON.toJSONString(boList));
+        }
+        return boList;
     }
 }
