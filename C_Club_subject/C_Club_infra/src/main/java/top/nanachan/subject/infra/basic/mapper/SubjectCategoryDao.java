@@ -9,7 +9,7 @@ import java.util.List;
  * 题目分类(SubjectCategory)表数据库访问层
  *
  * @author makejava
- * @since 2024-04-05 09:55:09
+ * @since 2024-04-05 21:49:58
  */
 public interface SubjectCategoryDao {
 
@@ -69,7 +69,10 @@ public interface SubjectCategoryDao {
      * @return 影响行数
      */
     int deleteById(Long id);
-    
+
     List<SubjectCategory> queryCategory(SubjectCategory subjectCategory);
+
+    Integer querySubjectCount(Long id);
+
 }
 

@@ -1,20 +1,35 @@
 package top.nanachan.subject.domain.service;
 
 import top.nanachan.subject.domain.entity.SubjectCategoryBO;
-import top.nanachan.subject.infra.basic.service.SubjectCategoryService;
 
 import java.util.List;
 
-/**
- * @author leon_ccc
- * @date 2024/4/8 10:24
- */
+
 public interface SubjectCategoryDomainService {
 
+    /**
+     * 新增分类
+     */
     void add(SubjectCategoryBO subjectCategoryBO);
 
     /**
      * 查询岗位大类
      */
     List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO);
+
+    /**
+     * 更新分类
+     */
+    Boolean update(SubjectCategoryBO subjectCategoryBO);
+
+    /**
+     * 删除分类
+     */
+    Boolean delete(SubjectCategoryBO subjectCategoryBO);
+
+    /**
+     * 查询分类及标签
+     */
+    List<SubjectCategoryBO> queryCategoryAndLabel(SubjectCategoryBO subjectCategoryBO);
+
 }
